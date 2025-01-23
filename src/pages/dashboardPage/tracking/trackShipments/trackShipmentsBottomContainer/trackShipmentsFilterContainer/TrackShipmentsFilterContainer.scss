@@ -1,0 +1,238 @@
+@use '../../../../../../assets/style/vars.scss' as vars;
+
+.trackShipmentsFilterContainer-out-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 40px;
+
+    .trackShipmentsFilterContainer-top-container {
+        display: flex;
+        flex: 1;
+        gap: 10px;
+
+        .trackShipmentsFilterContainer-search-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex: 3;
+
+            .p-input-icon-left {
+                width: 100%;
+                position: relative;
+
+                .pi-search {
+                    position: absolute;
+                    left: 15px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    color: vars.$main-color;
+                    font-size: 20px;
+                    z-index: 1;
+                }
+
+                .trackFilter-input {
+                    width: 100%;
+                    padding: 18px 14px 18px 45px;
+                    border-radius: 15px;
+                    border: 1px solid #ced4da;
+                    box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.08);
+                    text-align: right;
+                    font-size: 15px;
+                    transition: all 0.3s ease;
+
+                    &:focus {
+                        outline: none;
+                        border-color: vars.$main-color;
+                        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.12);
+                    }
+
+                    &::placeholder {
+                        color: #888;
+                    }
+                }
+            }
+
+        }
+
+        .trackShipmentsFilterContainer-date-picker {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+
+            .trackShipmentsFilterContainer-calender {
+                width: 100%;
+                height: 100%;
+            }
+
+
+        }
+    }
+
+
+    .trackShipmentsFilterContainer-bottom-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+
+        .trackShipmentsFilterContainer-dropdown-out-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 10px;
+            width: 80%;
+
+            .dropdown-container {
+                width: 25%;
+                border-radius: 60px;
+                font-size: 12px;
+                box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.11);
+
+
+            }
+        }
+
+        .trackShipmentsFilterContainer-buttons-container {
+            display: flex;
+            gap: 10px;
+            font-size: 13px;
+            font-weight: 600;
+
+            a:first-child {
+                display: flex;
+                gap: 5px;
+                justify-content: center;
+                align-items: center;
+                width: 150px;
+                border: 1px solid vars.$main-color;
+                border-radius: 10px;
+                color: vars.$main-color;
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    background-color: vars.$main-color;
+                    color: white;
+                }
+            }
+
+            a:nth-child(2) {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 90px;
+                background-color: vars.$main-color;
+                color: white;
+                border-radius: 10px;
+            }
+        }
+    }
+}
+
+.css-b62m3t-container {
+    height: 100%;
+}
+
+.css-13cymwt-control {
+    height: 100%;
+
+    :hover {
+        height: 100%;
+        background-color: transparent;
+        border-color: #888;
+    }
+}
+
+.css-t3ipsp-control {
+    height: 100%;
+    box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.11);
+}
+
+.css-1xc3v61-indicatorContainer:hover {
+    height: 100%;
+}
+
+@media (max-width: 1250px) {
+    .trackShipmentsFilterContainer-out-container {
+        .trackShipmentsFilterContainer-top-container {}
+
+        .trackShipmentsFilterContainer-bottom-container {
+            flex-direction: column;
+            gap: 15px;
+
+            .trackShipmentsFilterContainer-dropdown-out-container {
+                width: 100%;
+            }
+
+            .trackShipmentsFilterContainer-buttons-container {
+                a {
+                    padding: 10px 5px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 830px) {
+    .trackShipmentsFilterContainer-out-container {
+
+        .trackShipmentsFilterContainer-top-container {
+            flex-direction: column;
+
+            .trackShipmentsFilterContainer-search-container{
+                .p-input-icon-left{
+                    .trackFilter-input{
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            .trackShipmentsFilterContainer-date-picker{
+                .trackShipmentsFilterContainer-calender{
+                    .p-inputtext{
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+
+        .trackShipmentsFilterContainer-bottom-container {
+            .trackShipmentsFilterContainer-dropdown-out-container {
+                flex-wrap: wrap;
+
+                .dropdown-container {
+                    width: 40%;
+                }
+            }
+
+            .trackShipmentsFilterContainer-buttons-container {
+                justify-content: center;
+
+                a:first-child {
+                    width: 160px;
+                    gap: 8px;
+
+                }
+            }
+        }
+
+    }
+}
+
+@media (max-width: 310px) {
+    .trackShipmentsFilterContainer-out-container {
+        .trackShipmentsFilterContainer-bottom-container {
+            .trackShipmentsFilterContainer-buttons-container {
+                a:first-child {
+                    width: 140px;
+                    gap: 5px;
+
+                }
+                a:nth-child(2) {
+                    width: 80px;
+                }
+            }
+        }
+    }
+}

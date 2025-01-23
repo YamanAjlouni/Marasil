@@ -1,0 +1,174 @@
+@use '../../../assets/style/vars' as vars;
+
+.mechOfWork-out-container {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    padding: 30px 80px;
+
+    .mechOfWork-top-container {
+        width: 100%;
+        text-align: center;
+
+        h2 {
+            margin-bottom: 10px;
+            font-size: 32px;
+            color: vars.$main-color;
+            text-align: center;
+        }
+
+        .line-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1px; // Space between the lines
+
+            .line {
+                height: 1px;
+                background-color: vars.$main-color;
+                width: 20px; // Default width for the top and bottom lines
+            }
+
+            .middle {
+                width: 60px; // Double the width of the other lines
+            }
+        }
+
+    }
+
+    @keyframes gentleRocking {
+        0% { transform: rotate(0deg); }
+        30% { transform: rotate(-5deg); }
+        70% { transform: rotate(5deg); }
+        100% { transform: rotate(0deg); }
+    }
+    
+    .mechOfWork-bottom-container {
+        padding: 2rem 1rem; // Reduced side padding for small screens
+        
+        .image-flow-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap; // Allow wrapping on smaller screens
+            
+            @media (max-width: 1400px) {
+                gap: 1.5rem;
+            }
+            
+            @media (max-width: 1200px) {
+                gap: 1rem;
+                flex-direction: column;
+            }
+        }
+    
+        .image-container {
+            flex-shrink: 0;
+    
+            .flow-image {
+                width: 140px;
+                height: 140px;
+                object-fit: cover;
+                transition: transform 0.3s ease;
+    
+                @media (max-width: 1400px) {
+                    width: 120px;
+                    height: 120px;
+                }
+    
+                @media (max-width: 1200px) {
+                    width: 100px;
+                    height: 100px;
+                }
+    
+                &:hover {
+                    animation: gentleRocking 2s ease-in-out infinite;
+                }
+            }
+    
+            &.logo-container {
+                .logo {
+                    width: 100%;
+                    max-width: 150px;
+                    transition: transform 0.3s ease;
+    
+                    @media (max-width: 1400px) {
+                        max-width: 130px;
+                    }
+    
+                    @media (max-width: 1200px) {
+                        max-width: 110px;
+                    }
+    
+                    &:hover {
+                        animation: gentleRocking 2s ease-in-out infinite;
+                    }
+                }
+            }
+        }
+    
+        .arrow-section {
+            position: relative;
+            padding-top: 30px;
+    
+            @media (max-width: 1200px) {
+                transform: rotate(90deg); // Rotate arrows for vertical layout
+                padding-top: 20px;
+                margin: 2rem 0;
+            }
+    
+            .arrow-content {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 1rem;
+    
+                @media (max-width: 1400px) {
+                    gap: 0.75rem;
+                }
+            }
+    
+            .arrow-text {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: 1rem;
+                color: #333;
+                margin: 0;
+                width: max-content;
+                transition: transform 0.3s ease;
+    
+                @media (max-width: 1200px) {
+                    transform: translateX(-50%) rotate(-90deg); // Counter-rotate text to keep it readable
+                    top: -35px; // Adjust position for rotated layout
+                    width: auto;
+                    font-size: 0.9rem;
+                }
+    
+                &:hover {
+                    @media (min-width: 500px) {
+                        transform: translate(-50%, -5px);
+                    }
+                    @media (max-width: 1200px) {
+                        transform: translate(-50%, -25px) rotate(-90deg);
+                    }
+                }
+            }
+    
+            .arrow-image {
+                width: 300px;
+                height: auto;
+    
+                @media (max-width: 1400px) {
+                    width: 250px;
+                }
+    
+                @media (max-width: 1200px) {
+                    width: 150px;
+                }
+            }
+        }
+    }
+}

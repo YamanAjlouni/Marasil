@@ -1,0 +1,86 @@
+@use '../../../assets/style/vars.scss' as vars;
+
+.sidebarDash-out-container {
+    width: 200px;
+    z-index: 9;
+    box-shadow: 0px 3px 9px 0px rgba(0, 0, 0, 0.10);
+    position: fixed;
+    background-color: #fff;
+    direction: rtl;
+    margin-top: 80px;
+    height: calc(100vh - 80px);
+    transition: transform 0.3s ease;
+    transform: translateX(0); // Default position
+
+    &:not(.open) {
+        transform: translateX(100%); // Move out of view when closed
+    }
+
+    .sidebarDash-container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        a {
+            color: vars.$main-color;
+        }
+
+        .sidebarDash-details {
+            background-color: #fff;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            cursor: pointer;
+
+            &:hover {
+                background-color: vars.$main-color;
+                color: #fff;
+
+                a {
+                    color: #fff;
+                }
+            }
+
+            a {
+                color: vars.$main-color;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+            img {
+                width: 23px;
+                transition: transform 0.3s ease;
+            }
+
+            &:hover img {
+                transform: scale(1.1);
+            }
+        }
+
+        .active {
+            background-color: vars.$main-color;
+            color: #fff;
+
+            a {
+                color: #fff;
+            }
+        }
+    }
+}
+
+@media(max-width:1120px){
+    .sidebarDash-out-container{
+        position: fixed;
+        z-index: 9;
+        width: 250px;
+        height: 100vh;
+        // Add this to hide the sidebar by default on mobile
+        transform: translateX(100%);
+
+        &.open {
+            transform: translateX(0);
+        }
+    }
+}

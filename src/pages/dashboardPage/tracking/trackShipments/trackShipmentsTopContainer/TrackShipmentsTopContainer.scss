@@ -1,0 +1,154 @@
+@use '../../../../../assets/style/vars.scss' as vars;
+
+.trackShipmentsTopContainer-out-container{
+    padding: 25px 20px;
+    display: flex;
+    gap: 10px;
+    background-color: #fff;
+    box-shadow: vars.$box-shadow;
+    border-radius: 5px;
+
+    .trackShipmentsTopContainer-right-container{
+        flex: 1.5;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+
+        .trackShipmentsTopContainer-right-top-container{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            flex: 1;
+            align-items: center;
+
+            h2{
+                font-size: 26px;
+            }
+
+            div{
+                font-size: 13px;
+            }
+        }
+
+        .trackShipmentsTopContainer-right-bottom-container{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            flex: 2;
+            align-items: center;
+            padding: 50px;
+            font-size: 15px;
+
+            div:first-child{
+                font-weight: bold;
+            }
+        }
+    }
+
+    .trackShipmentsTopContainer-left-container{
+        flex: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 30px;
+    
+
+        .trackShipmentsTopContainer-left-card-container{
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.30);
+            width: 40%;
+
+            .trackShipmentsTopContainer-left-card-right-container{
+                display: flex;
+                gap: 10px;
+                align-items: center;
+
+                .svg-icon-container{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 10px;
+                    border-radius: 50%;
+
+                    
+                }
+
+                .purple-image{
+                    background-color: #9c68e8;
+                }
+
+                .cyan-color{
+                    background-color: #2ec6c6;
+                }
+
+                .yellow-color{
+                    background-color: #ffc300;
+                }
+
+                .light-red-color{
+                    background-color: #f55;
+                }
+
+                .green-color{
+                    background-color: #3fb93f;
+                }
+
+                .red-color{
+                    background-color: #bf0505;
+                }
+               
+            }
+
+            .trackShipmentsTopContainer-left-number{
+                font-size: 20px;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+@media(max-width: 1280px){
+    .trackShipmentsTopContainer-out-container{
+        flex-direction: column;
+        gap: 50px;
+    }
+}
+
+@media(max-width: 830px){
+    .trackShipmentsTopContainer-out-container{
+        padding: 25px 0;
+        .trackShipmentsTopContainer-right-container{
+
+        }
+
+        .trackShipmentsTopContainer-left-container{
+            .trackShipmentsTopContainer-left-card-container{
+                width: 45%;
+            }
+        }
+
+    }
+}
+
+@media(max-width:630px){
+    .trackShipmentsTopContainer-out-container{
+        padding: 25px 20px;
+        .trackShipmentsTopContainer-right-container{
+
+        }
+
+        .trackShipmentsTopContainer-left-container{
+            .trackShipmentsTopContainer-left-card-container{
+                width: 100%;
+            }
+        }
+
+    }
+}

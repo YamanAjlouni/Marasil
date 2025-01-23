@@ -1,0 +1,163 @@
+@use '../../../../assets/style/vars.scss' as vars;
+
+.ordersTable-out-container {
+    width: 100%;
+    overflow-x: auto;
+    padding: 20px;
+    box-sizing: border-box;
+
+    table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0 10px;
+        margin: 20px 0;
+        direction: rtl;
+
+        thead {
+            th {
+                padding: 15px;
+                text-align: center;
+                border-bottom: 2px solid #ddd;
+                font-weight: bold;
+                color: black;
+            }
+        }
+
+        tbody {
+            tr {
+                background-color: white;
+                overflow: hidden;
+
+                td {
+                    padding: 15px;
+                    text-align: center;
+                    color: black;
+                    font-size: 12px;
+
+                    &:first-child {
+                        border-top-right-radius: 30px;
+                        border-bottom-right-radius: 30px;
+                    }
+
+                    &:last-child {
+                        border-top-left-radius: 30px;
+                        border-bottom-left-radius: 30px;
+                    }
+
+                    .ordersTable-details-column {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 5px;
+
+                        .pi-pen-to-square {
+                            display: flex;
+                            justify-content: center;
+                            gap: 5px;
+                            cursor: pointer;
+                        }
+
+                        span {
+                            margin: 2px 0 !important;
+                        }
+
+                        .ordersTable-details-ship-button {
+                            color: vars.$main-color;
+                            border: 1px solid vars.$main-color;
+                            border-radius: 10px;
+                            font-size: 15px;
+                            font-weight: bold;
+                            background-color: transparent;
+                            padding: 4px 12px;
+                            min-width: 90px;
+                        }
+
+                        .ordersTable-details-hide-button {
+                            color: #d9534f;
+                            border: 1px solid #d9534f;
+                            border-radius: 10px;
+                            font-size: 15px;
+                            font-weight: bold;
+                            background-color: transparent;
+                            padding: 4px 12px;
+                            min-width: 90px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1100px) {
+        .orders-table-container {
+            margin: 0 auto; // Center the container
+            width: 90%; // Take 90% of parent width
+
+            .orders-table {
+                table {
+                    width: max-content;
+                    min-width: 900px; // Prevent table from becoming too narrow
+
+                    thead tr th {
+                        padding: 8px;
+                    }
+
+                    tbody tr td {
+                        padding: 8px;
+                    }
+                }
+            }
+        }
+    }
+
+    // Hide table headers on small devices
+    @media (max-width: 940px) {
+        table {
+            width: 100%;
+
+            thead {
+                display: none;
+            }
+
+            tbody {
+                tr {
+                    display: block;
+                    margin-bottom: 20px;
+                    border-radius: 30px;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                    padding: 20px;
+
+                    td {
+                        display: block;
+                        text-align: center;
+                        padding: 10px;
+                        font-size: 14px;
+
+                        &:first-child {
+                            border-top-right-radius: 30px;
+                            border-top-left-radius: 30px;
+                        }
+
+                        &:last-child {
+                            border-bottom-right-radius: 30px;
+                            border-bottom-left-radius: 30px;
+                        }
+
+                        .ordersTable-details-column {
+                            gap: 10px;
+
+                            .ordersTable-details-ship-button,
+                            .ordersTable-details-hide-button {
+                                width: 100%;
+                                margin-bottom: 5px;
+                            }
+                        }
+                    }
+
+
+                }
+            }
+        }
+    }
+
+
+}

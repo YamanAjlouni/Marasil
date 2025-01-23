@@ -1,0 +1,42 @@
+@use '../../../../assets/style/vars.scss' as vars;
+
+.trackingTopContainer-out-container{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .trackingTopContainer-top-container{
+    background-color: #fff;
+    display: flex;
+    padding: 25px 20px;
+    font-size: 25px;
+    box-shadow: vars.$box-shadow;
+
+    h3{
+      border-bottom: 5px solid vars.$main-color;
+    }
+  }
+
+  .trackingTopContainer-bottom-container{
+    font-size: 16px;
+    display: flex;
+    padding: 5px 10px 0;
+    background-color: #fff;
+    box-shadow: vars.$box-shadow;
+    gap: 30px;
+
+    div{
+      padding: 6px 0 10px;
+      cursor: pointer; /* Add cursor pointer to indicate clickability */
+    }
+
+    .active-tab {
+      border-bottom: 2px solid vars.$main-color; /* Adjust this for highlighted tab */
+      font-weight: 600;
+    }
+  }
+
+  .trackingTopContainer-content {
+    margin-top: 20px;
+  }
+}

@@ -1,0 +1,30 @@
+.admin-container {
+    display: flex;
+    direction: rtl;
+    width: 100%;
+
+    .admin-content {
+        flex: 1;
+        position: relative;
+        box-sizing: border-box;
+        background-color: #fafafa;
+        transition: margin-right 0.3s ease;
+        margin-right: 200px; // Initial margin when sidebar is open
+        margin-top: 80px;
+
+        &.full-width {
+            margin-right: 0;
+        }
+    }
+}
+
+@media(max-width: 1120px) {
+    .admin-container {
+        position: relative;
+
+        .admin-content {
+            width: 100%;
+            margin-right: 0;
+        }
+    }
+}

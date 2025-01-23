@@ -1,0 +1,73 @@
+@use '../../../../../../assets/style/vars.scss' as vars;
+
+.trackShipmentsTable-out-container {
+    width: 100%;
+    padding-top: 30px;
+  
+    table {
+      width: 100%;
+      border-collapse: collapse;
+  
+      thead {
+        th {
+          text-align: center;
+          padding: 20px;
+        }
+      }
+  
+      tbody {
+        td {
+          text-align: center;
+          padding: 10px;
+        }
+      }
+    }
+
+    .controls{
+        padding: 20px;
+        select{
+            padding: 5px;
+            border-color: vars.$border-color-light;
+            border-radius: 5px;
+        }
+    }
+  
+    @media (max-width: 940px) {
+      table {
+        display: none; 
+      }
+  
+      .row-card {
+        display: flex;
+        flex-direction: column;
+        background: #f9f9f9; /* Light background for the card */
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        padding: 15px;
+        box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.11);
+    }
+  
+      .row-card div {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 0;
+      }
+  
+      .row-card div span:first-child {
+        font-weight: bold;
+        color: #333;
+      }
+  
+      .row-card div span:last-child {
+        color: #555;
+        word-break: break-word;
+      }
+  
+      .row-card div:not(:last-child) {
+        border-bottom: 1px solid #ddd; /* Separator between rows */
+        margin-bottom: 8px;
+      }
+    }
+  }
+  

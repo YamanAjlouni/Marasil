@@ -1,0 +1,121 @@
+@use '../../../assets/style/vars' as vars;
+
+
+.shipments-out-container {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    background-image: url('../../assets/images/world-background.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+
+    .shipments-top-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+
+
+        h2 {
+            font-size: 35px;
+        }
+
+        .line-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+            justify-content: center;
+            align-items: center;
+
+            .line {
+                height: 1px;
+                background-color: vars.$main-color;
+                width: 20px;
+            }
+
+            .middle {
+                width: 60px;
+            }
+        }
+    }
+
+    .shipments-bottom-container {
+        display: flex;
+        padding: 30px 80px;
+
+        .shipments-details-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+
+            .shipments-details{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 35px;
+                height: 100%;
+
+                h4{
+                    color: vars.$main-color;
+                    font-size: 22px;
+                    font-weight: bold;
+                }
+
+                img{
+                    width: 35%;
+                    padding: 17px;
+                    background-color: #fff;
+                }
+            }
+        }
+
+        .shipments-phone{
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+
+            video{
+                width: 70%;
+                border-radius: 20px;
+            }
+        }
+    }
+}
+
+@media(max-width: 850px){
+    .shipments-out-container{
+        padding: 30px 0;
+        background-size: contain ;
+        
+        .shipments-top-container{
+            h2{
+                font-size: 25px;
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media(max-width: 700px){
+    .shipments-out-container{
+        .shipments-bottom-container{
+            padding: 30px 20px;
+        }
+    }
+}
+
+@media(max-width: 470px ){
+    .shipments-out-container{
+        .shipments-bottom-container{
+            flex-direction: column;
+            gap: 30px;
+        }
+    }
+}

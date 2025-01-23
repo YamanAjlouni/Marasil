@@ -1,0 +1,183 @@
+.navbar-out-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 35px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: #fff;
+    transition: all 0.3s ease;
+
+    &.navbar-scrolled {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-left-container {
+        display: flex;
+        flex: 1;
+
+        .navbar-left-buttons {
+            display: flex;
+            gap: 10px;
+
+            .navbar-but {
+                padding: 8px 16px;
+                border: 1px solid #e2e8f0;
+                border-radius: 6px;
+                font-size: 14px;
+                font-weight: 500;
+                cursor: pointer;
+                transition: all 0.2s ease;
+                background-color: #fff;
+
+                &:hover {
+                    background-color: #f8fafc;
+                }
+            }
+        }
+    }
+
+    .navbar-logo {
+        img {
+            max-width: 163px;
+            width: 100%;
+            margin: 0 20px;
+            display: block;
+        }
+    }
+
+    .navbar-right-container {
+        display: flex;
+        flex: 1;
+        justify-content: flex-end;
+        align-items: center;
+
+        .navbar-right-links {
+            display: flex;
+            gap: 20px;
+            font-size: 17px;
+            font-weight: 700;
+
+            a {
+                color: #1a202c;
+                text-decoration: none;
+                transition: color 0.2s ease;
+
+                &:hover {
+                    color: #4a5568;
+                }
+            }
+        }
+
+        .navbar-hamburger-icon {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            color: #4a5568;
+
+            &:hover {
+                color: #1a202c;
+            }
+        }
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 1100px) {
+    .navbar-out-container {
+        padding: 15px 20px;
+
+        .navbar-left-container {
+            .navbar-left-buttons {
+                display: flex;
+                gap: 5px;
+
+                .navbar-but {
+                    padding: 4px 8px;
+                    border: 1px solid #e2e8f0;
+                    border-radius: 6px;
+                    font-size: 10px;
+                    font-weight: 500;
+                    cursor: pointer;
+                    transition: all 0.2s ease;
+                    background-color: #fff;
+                }
+
+                .navbar-but-english-arabic{
+                    display: none;
+                }
+            }
+        }
+
+        .navbar-logo {
+            img {
+                max-width: 120px;
+            }
+        }
+
+        .navbar-right-container {
+            .navbar-hamburger-icon {
+                display: block;
+            }
+
+            .navbar-right-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background-color: #fff;
+                padding: 1rem 0;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+                &.navbar-mobile-open {
+                    display: flex;
+                }
+
+                a {
+                    padding: 12px 20px;
+                    text-align: center;
+                    border-bottom: 1px solid #f0f0f0;
+
+                    &:last-child {
+                        border-bottom: none;
+                    }
+
+                    &:hover {
+                        background-color: #f8fafc;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 600px){
+    .navbar-out-container{
+        padding: 15px 10px;
+
+        .navbar-left-container{
+            .navbar-left-buttons{
+                .navbar-but{
+                    padding: 2px 4px;
+                }
+            }
+        }
+
+        .navbar-logo{
+            img{
+                max-width: 80px;
+                margin: 0;
+            }
+        }
+    }
+}
