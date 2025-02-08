@@ -1,0 +1,192 @@
+@use '../../../../../assets/style/vars.scss' as vars;
+
+.profile-out-container {
+    padding: 40px 45px;
+    box-shadow: vars.$box-shadow;
+    background-color: white;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    border-radius: 20px;
+    
+
+    .profile-top-container {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #EBEBEB;
+
+        img {
+            width: 100px;
+            border: 1px solid black;
+            border-radius: 50%;
+        }
+
+        div {
+            display: flex;
+            gap: 10px;
+
+            button {
+                padding: 5px 35px;
+                background-color: transparent;
+                border-radius: 10px;
+                font-size: 15px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+
+            .profile-top-edit-button {
+                border: 1px solid vars.$main-color;
+                color: vars.$main-color;
+                transition: 0.2s all ease-in-out;
+
+                &:hover {
+                    background-color: vars.$main-color;
+                    color: white;
+                }
+            }
+
+            .profile-top-delete-button {
+                border: 1px solid vars.$red-color;
+                color: vars.$red-color;
+                transition: 0.2s all ease-in-out;
+
+                &:hover {
+                    background-color: vars.$red-color;
+                    color: white;
+                }
+            }
+        }
+    }
+
+    .profile-bottom-container {
+        display: flex;
+        flex-direction: column;
+
+        .profile-form-out-container {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            .form-field-container {
+                margin-bottom: 20px;
+                width: 48%;
+
+                .label-container {
+                    display: flex;
+                    align-items: center;
+                    gap: 4px;
+                    margin-bottom: 8px;
+
+                    label {
+                        font-size: 14px;
+                        font-weight: 500;
+                        color: black;
+                    }
+
+                    .required {
+                        color: vars.$red-color;
+                        font-size: 16px;
+                    }
+                }
+
+                .input-container {
+                    input {
+                        width: 100%;
+                        padding: 10px 12px;
+                        border: 1px solid black;
+                        border-radius: 6px;
+                        font-size: 14px;
+
+                        &:focus {
+                            outline: none;
+                            box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
+                        }
+
+                        &::placeholder {
+                            color: #999;
+                        }
+                    }
+                }
+
+                .phone-input-container {
+                    align-items: stretch;
+                    gap: 8px;
+                    width: 100%;
+                    border: 1px solid black;
+                    border-radius: 6px;
+                    position: relative;
+
+                    .phone-input {
+                        flex: 1;
+                        padding: 10px 12px;
+                        border: none;
+                        font-size: 14px;
+
+                        &:focus {
+                            outline: none;
+                            box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
+                        }
+
+                        &::placeholder {
+                            color: #999;
+                        }
+                    }
+
+                    .iti {
+                        width: 100%;
+                        right: 0;
+                    }
+
+                    .iti__country-container {
+                        right: 0 !important;
+                    }
+
+                    .iti__selected-country {
+                        .iti__selected-country-primary {
+                            gap: 10px;
+                        }
+                    }
+
+
+                }
+            }
+        }
+        .profile-bottom-save-container{
+            display: flex;
+            justify-content: center;
+            padding-top: 20px;
+
+            a{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid vars.$main-color;
+                background-color: transparent;
+                padding: 6px 50px;
+                font-size: 16px;
+                color: vars.$main-color;
+                cursor: pointer;
+                border-radius: 10px;
+
+                &:hover{
+                    background-color: vars.$main-color;
+                    color: white;
+                    transition: 0.2s all ease-in-out;
+                }
+            }
+
+        }
+    }
+}
+
+.profile-out-container .profile-bottom-container .form-field-container .phone-input-container {
+    .phone-input {
+        width: 100%;
+        border-radius: 6px;
+        padding-left: 10px !important;
+    }
+}

@@ -1,0 +1,29 @@
+@use '../../../../../assets/style/vars.scss' as vars;
+
+.returnsRetrievalPageActivation-out-container{
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: vars.$box-shadow;
+    border-radius: 20px;
+    color: vars.$main-color;
+
+    .returnsRetrievalPageActivation-top-container{
+        display: flex;
+        gap: 15px;
+        align-items: center ;
+    }
+
+    .returnsRetrievalPageActivation-bottom-container{
+        direction: ltr;        
+
+        span{
+            padding: 5px 25px;
+            background-color: vars.$main-color;
+            color: white;
+            font-size: 17px;
+            border-radius: 5px;
+        }
+    }
+}

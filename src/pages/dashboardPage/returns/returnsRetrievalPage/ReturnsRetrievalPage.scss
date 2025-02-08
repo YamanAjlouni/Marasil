@@ -1,0 +1,38 @@
+@use '../../../../assets/style/vars.scss' as vars;
+
+.returnsRetrievalPage-out-container{
+    display: flex;
+    gap: 30px;
+
+    .returnsRetrievalPage-right-container{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        color: vars.$main-color;
+
+        .returnsRetrievalPage-container{
+            background-color: white;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            border-radius: 20px;
+            box-shadow: vars.$box-shadow;
+            padding: 10px 20px;
+            font-weight: bold;
+            
+
+            span{
+                background-color: vars.$main-color;
+                color: white;
+                border: 1px solid vars.$main-color;
+                padding: 5px 12px;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    .returnsRetrievalPage-left-container{
+        flex: 2;
+    }
+}

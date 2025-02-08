@@ -1,0 +1,113 @@
+@use '../../../../assets/style/vars.scss' as vars;
+
+.returnsReplacing-out-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    .returnsReplacing-top-container {
+        display: flex;
+        gap: 15px;
+
+        .returnsReplacing-card {
+            padding: 25px 15px;
+            display: flex;
+            justify-content: space-between;
+            flex: 1;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: vars.$box-shadow;
+            cursor: pointer;
+
+            .returnsReplacing-right-container {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 8px;
+                font-size: 18px;
+
+                div:first-child {
+                    font-weight: bold;
+                    font-size: 22px;
+                }
+            }
+
+            .returnsReplacing-left-container {
+                background-color: #9c68e8;
+                padding: 10px;
+                border-radius: 50%;
+                width: 60px;
+                height: 60px;
+
+            }
+        }
+    }
+
+    .returnsReplacing-search-bar {
+        display: flex;
+        gap: 20px;
+
+        .returnsReplacing-search-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex: 3;
+
+            .p-input-icon-left {
+                width: 100%;
+                position: relative;
+
+                .pi-search {
+                    position: absolute;
+                    left: 15px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    color: vars.$main-color;
+                    font-size: 20px;
+                    z-index: 1;
+                }
+
+                .trackFilter-input {
+                    width: 100%;
+                    padding: 18px 14px 18px 45px;
+                    border-radius: 15px;
+                    border: 1px solid #ced4da;
+                    box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.08);
+                    text-align: right;
+                    font-size: 15px;
+                    transition: all 0.3s ease;
+
+                    &:focus {
+                        outline: none;
+                        border-color: vars.$main-color;
+                        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.12);
+                    }
+
+                    &::placeholder {
+                        color: #888;
+                    }
+                }
+            }
+        }
+
+        .returnsReplacing-search-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+
+            button {
+                height: 60%;
+                padding: 5px 12px;
+                border-radius: 10px;
+                background-color: vars.$main-color;
+                color: white;
+                font-size: 16px;
+            }
+        }
+    }
+
+    .returnsReplacing-bottom-container{
+        
+    }
+}

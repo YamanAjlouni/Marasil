@@ -1,0 +1,133 @@
+@use '../../../../../assets/style/vars.scss' as vars;
+
+.personal-out-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .personal-top-container, 
+    .personal-bottom-container {
+        background-color: white;
+        box-shadow: vars.$box-shadow;
+        padding: 15px 20px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 15px;
+
+        h5 {
+            font-size: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f1f1f1;
+            color: vars.$main-color;
+        }
+    }
+
+    .personal-top-container-details,
+    .personal-bottom-container-details {
+        padding: 20px;
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+
+        .form-field-container {
+            margin-bottom: 20px;
+            width: 48%;
+
+            .label-container {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                margin-bottom: 8px;
+
+                label {
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: black;
+                }
+
+                .required {
+                    color: vars.$red-color;
+                    font-size: 16px;
+                }
+            }
+
+            .input-container {
+                position: relative;
+
+                select {
+                    width: 100%;
+                    padding: 12px;
+                    font-size: 16px;
+                    font-weight: 500;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    background: white;
+                    cursor: pointer;
+                    appearance: none; 
+                    direction: rtl; 
+                    text-align: right;
+                    text-indent: 10px;
+                }
+
+                /* إبقاء السهم في الحقول المنسدلة فقط داخل .personal-top-container */
+                .personal-top-container select {
+                    appearance: none;
+                }
+
+                .personal-top-container select::after {
+                    content: "▼";
+                    position: absolute;
+                    left: 15px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    pointer-events: none;
+                    color: #666;
+                    font-size: 10px;
+                }
+
+                input[type="text"] {
+                    width: 100%;
+                    padding: 12px;
+                    font-size: 16px;
+                    font-weight: 500;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    background: white;
+                    text-align: right;
+                    text-indent: 10px;
+
+                    &:focus {
+                        outline: 2px solid vars.$main-color;
+                    }
+                }
+
+                /* إزالة السهم من حقول الإدخال النصية فقط داخل .personal-bottom-container */
+                .personal-bottom-container input[type="text"] {
+                    appearance: none; /* يضمن عدم ظهور السهم */
+                }
+            }
+        }
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+
+        button {
+            background-color: transparent;
+            color: vars.$main-color;
+            border: 1px solid vars.$main-color;
+            padding: 6px 40px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.2s ease-in-out;
+
+            &:hover {
+                background-color: vars.$main-color;
+                color: white;
+            }
+        }
+    }
+}

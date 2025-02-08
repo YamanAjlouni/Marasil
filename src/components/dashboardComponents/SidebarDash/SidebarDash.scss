@@ -20,9 +20,42 @@
         display: flex;
         flex-direction: column;
         height: 100%;
+        overflow-y: auto; 
+        -webkit-overflow-scrolling: touch; 
+
+        &::-webkit-scrollbar {
+            width: 3px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: vars.$main-color;
+            border-radius: 5px;
+        }
 
         a {
-            color: vars.$main-color;
+            color: black;
+        }
+
+        .sidebarDash-section-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #666;
+            padding: 20px 20px 10px;
+            margin: 0;
+            border-top: 1px solid #eee;
+
+            &:first-of-type {
+                border-top: none;
+                padding-top: 15px;
+            }
+        }
+
+        .settings-section {
+            margin-bottom: 15px;
         }
 
         .sidebarDash-details {
@@ -57,6 +90,38 @@
             &:hover img {
                 transform: scale(1.1);
             }
+
+            &.settings-item {
+                padding: 12px 25px; // More padding-left for nested appearance
+                font-size: 14px;
+                border-right: 3px solid transparent;
+                margin: 2px 0;
+
+                &:hover {
+                    background-color: rgba(vars.$main-color, 0.1);
+                    color: vars.$main-color;
+                    border-right-color: vars.$main-color;
+                }
+
+                &.active {
+                    background-color: rgba(vars.$main-color, 0.15);
+                    color: vars.$main-color;
+                    border-right-color: vars.$main-color;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        .back-button {
+            padding: 20px;
+            font-weight: 600;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 10px;
+
+            img {
+                margin-left: 10px;
+                width: 18px;
+            }
         }
 
         .active {
@@ -70,14 +135,21 @@
     }
 }
 
-@media(max-width:1120px){
-    .sidebarDash-out-container{
+@media(max-width:1120px) {
+    .sidebarDash-out-container {
         position: fixed;
-        z-index: 9;
+        z-index: 4;
         width: 250px;
         height: 100vh;
-        // Add this to hide the sidebar by default on mobile
+        margin-top: 0; // Remove margin-top on mobile
+        overflow: hidden;
         transform: translateX(100%);
+
+        .sidebarDash-container {
+            margin-top: 80px; // Add padding to account for header
+            height: 100%; // Make sure container takes full height
+            padding-bottom: 80px;
+        }
 
         &.open {
             transform: translateX(0);

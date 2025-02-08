@@ -1,0 +1,31 @@
+@use '../../../assets/style/vars.scss' as vars;
+
+.returns-out-container {
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+
+    .returns-top-out-container {
+        padding: 15px;
+        box-shadow: vars.$box-shadow;
+
+
+        .returns-top-container {
+            display: flex;
+            width: 100%;
+            gap: 20px;
+            border-top: 1px solid #e9eef2;
+
+            div {
+                padding-top: 14px;
+                cursor: pointer;
+            }
+
+            .active-tab {
+                border-top: 2px solid vars.$main-color; /* Adjust this for highlighted tab */
+                font-weight: 600;
+              }
+        }
+    }
+}

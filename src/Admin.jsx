@@ -7,6 +7,9 @@ import { Dashboard } from './pages/dashboardPage/dashboard/Dashboard';
 import { Orders } from './pages/dashboardPage/orders/Orders';
 import { Shipments } from './pages/dashboardPage/shipments/Shipments';
 import { Tracking } from './pages/dashboardPage/tracking/Tracking';
+import { Returns } from './pages/dashboardPage/returns/Returns';
+import { Account } from './pages/dashboardPage/settings/account/Account';
+import { Plans } from './pages/dashboardPage/settings/plans/Plans';
 
 export const Admin = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -48,6 +51,9 @@ export const Admin = () => {
             <Route path="orders" element={<Orders />} />
             <Route path="shipments" element={<Shipments />} />
             <Route path="tracking" element={<Tracking />} />
+            <Route path="returns" element={<Returns />} />
+            <Route path="account" element={<Account />} />
+            <Route path="plans" element={<Plans />} />
           </Routes>
         </div>
       </div>
