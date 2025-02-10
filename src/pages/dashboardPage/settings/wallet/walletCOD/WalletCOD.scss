@@ -1,0 +1,425 @@
+@use '../../../../../assets/style/vars.scss' as vars;
+
+.walletCOD-out-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .walletCOD-summary-container {
+        background-color: white;
+        box-shadow: vars.$box-shadow;
+        border-radius: 5px;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .walletCOD-summary-top-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            h3 {
+                border-right: 5px solid vars.$main-color;
+                padding-right: 10px;
+                font-weight: 600;
+                font-size: 20px;
+            }
+
+            .walletCOD-summary-date-picker {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 30px;
+                font-weight: bold;
+
+                .walletCOD-calender {
+                    // width: 100%;
+                    height: 100%;
+                }
+
+                .p-inputtext {
+                    border-radius: 0 5px 5px 0;
+                }
+
+                .p-calendar-w-btn-right .p-datepicker-trigger {
+                    border-radius: 5px 0 0 5px;
+                }
+
+            }
+
+
+        }
+
+        // Variables
+        $spinner-size: 120px;
+        $border-width: 6px;
+        $border-radius: 50%;
+        $animation-timing: cubic-bezier(0.34, 1.56, 0.64, 1); // Custom spring effect
+
+        // Colors with new gradient effects
+        $color-purple: linear-gradient(135deg, #6366f1, #818cf8);
+        $color-green: linear-gradient(135deg, #22c55e, #4ade80);
+        $color-blue: linear-gradient(135deg, #3b82f6, #60a5fa);
+
+        @mixin gradient-border($gradient) {
+            border-image: $gradient;
+            border-image-slice: 1;
+        }
+
+        .walletCOD-summary-rating-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 20px;
+            gap: 40px;
+            perspective: 1000px; // 3D effect for hover
+
+            .rating-box {
+                text-align: center;
+                transform-style: preserve-3d;
+                transition: transform 0.5s $animation-timing;
+
+                &:hover {
+                    transform: translateY(-5px);
+
+                    .progress {
+                        transform: rotateY(10deg);
+
+                        .progress-value {
+                            transform: translate(-50%, -50%) scale(1.1);
+                        }
+                    }
+                }
+
+                .progress {
+                    width: $spinner-size;
+                    height: $spinner-size;
+                    position: relative;
+                    margin-bottom: 15px;
+                    transition: all 0.4s $animation-timing;
+                    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
+
+                    >span {
+                        position: absolute;
+                        width: 50%;
+                        height: 100%;
+                        transition: all 0.4s $animation-timing;
+                    }
+
+                    .progress-left {
+                        left: 0;
+                    }
+
+                    .progress-right {
+                        right: 0;
+                    }
+
+                    .progress-bar {
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        border: $border-width solid;
+                        top: 0;
+                        transition: all 0.4s ease;
+                        backdrop-filter: blur(5px);
+                    }
+
+                    .progress-left .progress-bar {
+                        left: 100%;
+                        border-top-right-radius: $spinner-size;
+                        border-bottom-right-radius: $spinner-size;
+                        border-left: 0;
+                        transform-origin: center left;
+                    }
+
+                    .progress-right .progress-bar {
+                        left: -100%;
+                        border-top-left-radius: $spinner-size;
+                        border-bottom-left-radius: $spinner-size;
+                        border-right: 0;
+                        transform-origin: center right;
+                    }
+
+                    .progress-value {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        font-size: 24px;
+                        font-weight: 700;
+                        color: #333;
+                        transition: all 0.4s $animation-timing;
+                        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                        opacity: 0;
+                        animation: value-pop-in 0.6s $animation-timing forwards;
+                        animation-delay: 1s;
+                    }
+
+                    // Enhanced color variations
+                    .color_01 {
+                        border-image: $color-purple;
+                        border-image-slice: 1;
+                        filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.3));
+                    }
+
+                    .color_03 {
+                        border-image: $color-green;
+                        border-image-slice: 1;
+                        filter: drop-shadow(0 0 8px rgba(34, 197, 94, 0.3));
+                    }
+
+                    .color_04 {
+                        border-image: $color-blue;
+                        border-image-slice: 1;
+                        filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.3));
+                    }
+                }
+
+                // Improved animations with spring effect
+                &:nth-child(1) .progress {
+                    .progress-left .progress-bar {
+                        animation: progress-left 1.5s $animation-timing both;
+                        animation-delay: 0.8s;
+                    }
+
+                    .progress-right .progress-bar {
+                        animation: progress-right 0.8s $animation-timing both;
+                    }
+                }
+
+                &:nth-child(2) .progress {
+                    .progress-left .progress-bar {
+                        animation: progress-left 1.5s $animation-timing both;
+                        animation-delay: 1.1s;
+                    }
+
+                    .progress-right .progress-bar {
+                        animation: progress-right 1.1s $animation-timing both;
+                        animation-delay: 0.3s;
+                    }
+                }
+
+                &:nth-child(3) .progress {
+                    .progress-left .progress-bar {
+                        animation: progress-left 1.5s $animation-timing both;
+                        animation-delay: 1.4s;
+                    }
+
+                    .progress-right .progress-bar {
+                        animation: progress-right 1.4s $animation-timing both;
+                        animation-delay: 0.6s;
+                    }
+                }
+            }
+
+            .text-black {
+                color: #333;
+                text-decoration: none;
+                margin-top: 15px;
+                display: block;
+                font-weight: 600;
+                font-size: 1.1em;
+                transition: all 0.3s ease;
+                position: relative;
+                padding: 5px 0;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    width: 0;
+                    height: 2px;
+                    background: currentColor;
+                    transition: all 0.3s ease;
+                    transform: translateX(-50%);
+                }
+
+                &:hover {
+                    color: #666;
+
+                    &::after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        // Refined keyframe animations
+        @keyframes progress-right {
+            0% {
+                transform: rotate(0deg);
+                opacity: 0.3;
+            }
+
+            100% {
+                transform: rotate(180deg);
+                opacity: 1;
+            }
+        }
+
+        @keyframes progress-left {
+            0% {
+                transform: rotate(0deg);
+                opacity: 0.3;
+            }
+
+            100% {
+                transform: rotate(180deg);
+                opacity: 1;
+            }
+        }
+
+        @keyframes value-pop-in {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.8);
+            }
+
+            70% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1.1);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+
+        // Enhanced responsiveness
+        @media screen and (max-width: 768px) {
+            .walletCOD-summary-rating-container {
+                flex-direction: column;
+                gap: 30px;
+                padding: 15px;
+
+                .rating-box {
+                    .progress {
+                        width: 100px;
+                        height: 100px;
+                    }
+
+                    .progress-value {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    .walletCOD-filter-container {
+        background-color: white;
+        box-shadow: vars.$box-shadow;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .walletCOD-filter-top-title {
+            padding-right: 10px;
+            border-right: 5px solid vars.$main-color;
+        }
+
+        .walletCOD-filter-images {
+            display: flex;
+        }
+
+        .walletCOD-filter-inputs-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 20px 20px 0 20px;
+            border-radius: 10px;
+            justify-content: space-between;
+
+            .filter-item {
+                display: flex;
+                flex-direction: column;
+                min-width: 400px;
+            }
+
+            label {
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+
+            input {
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+
+            .walletCOD-calendar {
+                width: 100%;
+            }
+        }
+
+        .walletCOD-filter-bottom-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px 0 20px;
+
+            .walletCOD-filter-pages-per-row-container {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                .css-b62m3t-container {
+                    min-width: 150px;
+                }
+            }
+
+            .walletCOD-filter-buttons-container {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+
+                a:first-child {
+                    background-color: vars.$main-color;
+                    border: 1px solid vars.$main-color;
+                    padding: 5px 12px;
+                    border-radius: 5px;
+                    color: white;
+                    cursor: pointer;
+                    transition: all 0.2s ease-in-out;
+
+                    &:hover {
+                        background-color: transparent;
+                        color: vars.$main-color;
+                    }
+                }
+
+                a:nth-child(2) {
+                    color: vars.$main-color;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .walletCOD-table {
+            width: 100%;
+            overflow-x: auto;
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 15px;
+            }
+
+            th,
+            td {
+                padding: 12px;
+                text-align: center;
+            }
+
+            th {
+                background-color: #f8f8f8;
+                font-weight: bold;
+                border-bottom: 1px solid #ddd;
+            }
+        }
+    }
+}

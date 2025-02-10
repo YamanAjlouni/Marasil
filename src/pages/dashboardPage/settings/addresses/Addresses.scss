@@ -1,0 +1,127 @@
+@use '../../../../assets/style/vars.scss' as vars;
+
+.addresses-out-container {
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    .addresses-top-container {
+        background-color: white;
+        box-shadow: vars.$box-shadow;
+        border-radius: 5px;
+        padding: 15px;
+        display: flex;
+
+        .addresses-top-right-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+
+            h3 {
+                font-size: 20px;
+                font-weight: bold;
+                border-right: 5px solid vars.$main-color;
+                padding-right: 10px;
+            }
+
+            p {
+                font-size: 13px;
+            }
+        }
+
+        .addresses-top-left-container {
+            flex: 1;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+
+            a {
+                color: white;
+                background-color: vars.$main-color;
+                padding: 8px 20px;
+                border-radius: 3px;
+                cursor: pointer;
+                font-size: 12px;
+
+            }
+        }
+    }
+
+    .addresses-card-container {
+        width: 400px;
+        padding: 15px;
+        box-shadow: vars.$box-shadow;
+        background-color: white;
+        border-radius: 3px;
+
+        .addresses-card-topic {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+        }
+
+        .addresses-card-middle {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #f1f1f1;
+
+            span:first-child {
+                border-radius: 50%;
+                line-height: 60px;
+                height: 80px;
+                color: vars.$main-color;
+                width: 80px;
+                font-size: 27px;
+                font-weight: bold;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #f7f4ff;
+                padding: 10px;
+            }
+
+            span:nth-child(2) {
+                color: vars.$main-color;
+                font-size: 12px;
+                font-weight: 500;
+                background-color: #f7f4ff;
+                padding: 4px 15px;
+                border-radius: 35px;
+                margin-top: 5px;
+            }
+        }
+
+        .addresses-card-bottom {
+            padding: 15px 0;
+
+            .addresses-card-list-out-container {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                li{
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 12px;
+                    color: black;
+                    font-weight: 600;
+
+                    span{
+                        color: black;
+                    }
+
+                    a{
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+}

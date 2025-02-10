@@ -1,0 +1,47 @@
+@use '../../../../assets/style/vars.scss' as vars;
+
+.wallet-out-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 25px 15px;
+
+    .wallet-top-container {
+        background-color: white;
+        box-shadow: vars.$box-shadow;
+        padding: 15px;
+        display: flex;
+        border-radius: 5px;
+
+        h3 {
+            padding-right: 10px;
+            font-weight: 600;
+            font-size: 20px;
+            border-right: 5px solid vars.$main-color;
+        }
+    }
+
+    .wallet-middle-out-container {
+        padding: 15px;
+        background-color: white;
+        box-shadow: vars.$box-shadow;
+        border-radius: 5px;
+
+        .wallet-middle-container {
+            display: flex;
+            gap: 25px;
+
+            .wallet-details{
+                padding-top: 14px;
+                border-top: 1px solid #e9eef2;
+                color: #687587;
+                cursor: pointer;
+            }
+
+            .active-tab {
+                color: #333333;
+                border-top: 3px solid vars.$main-color;
+            }
+        }
+    }
+}

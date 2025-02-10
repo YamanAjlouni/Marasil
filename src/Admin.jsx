@@ -10,6 +10,9 @@ import { Tracking } from './pages/dashboardPage/tracking/Tracking';
 import { Returns } from './pages/dashboardPage/returns/Returns';
 import { Account } from './pages/dashboardPage/settings/account/Account';
 import { Plans } from './pages/dashboardPage/settings/plans/Plans';
+import { Wallet } from './pages/dashboardPage/settings/wallet/Wallet';
+import { Store } from './pages/dashboardPage/settings/store/Store';
+import { Addresses } from './pages/dashboardPage/settings/addresses/Addresses';
 
 export const Admin = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -54,6 +57,9 @@ export const Admin = () => {
             <Route path="returns" element={<Returns />} />
             <Route path="account" element={<Account />} />
             <Route path="plans" element={<Plans />} />
+            <Route path="wallet" element={<Wallet />} />
+            <Route path="store" element={<Store />} />
+            <Route path="addresses" element={<Addresses />} />
           </Routes>
         </div>
       </div>
